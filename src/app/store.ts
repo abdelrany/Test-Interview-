@@ -5,6 +5,7 @@ export const store = configureStore({
 	reducer: {
 		[apiSlice.reducerPath]: apiSlice.reducer,
 	},
+	//Applying middleware to get external dta through an API (thunk)
 	middleware: (getDefaultMiddleware) => {
 		return getDefaultMiddleware().concat(apiSlice.middleware)
 	},

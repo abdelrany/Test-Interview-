@@ -4,7 +4,7 @@ import List from "./components/List"
 import Navbar from "./components/Navbar"
 import Sidebar from "./components/Sidebar"
 import Main from "./components/Main"
-import PartnerPage from "./Partner-page"
+import PartnerPage from "./features/partners/Partner-list-page"
 import { Routes, Route } from "react-router-dom"
 
 const App = () => (

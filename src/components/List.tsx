@@ -1,6 +1,6 @@
 import { PlusIcon } from "@heroicons/react/24/outline"
 import React from "react"
-import PartnerPage from "../Partner-page"
+import PartnerPage from "../features/partners/Partner-list-page"
 import Row from "./Row"
 
 type Props = {}
