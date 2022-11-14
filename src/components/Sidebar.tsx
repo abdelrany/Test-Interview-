@@ -7,7 +7,6 @@ import {
 	UserIcon,
 } from "@heroicons/react/24/outline"
 import Button from "./Button"
-import { Link } from "react-router-dom"
 
 type Props = {}
 
@@ -17,11 +16,11 @@ const Sidebar = (props: Props) => {
 	return (
 		<aside
 			className={`${
-				isOpen ? "h-full transition-all duration-500 " : "h-20 "
-			} overflow-hidden md:min-h-screen md:flex-[.32] lg:flex-[.25] xl:flex-[.15]`}>
+				isOpen ? "min-h-screen" : "h-20"
+			} w-full overflow-hidden md:min-h-screen md:w-[240px]`}>
 			{/* this will be rendered only in mobile/tablet breakpoint */}
-			<div className='text-liht flex w-full items-center justify-between  bg-primary p-4 md:hidden'>
-				<span className=' h-12  w-12 cursor-pointer rounded-full bg-black'></span>
+			<div className='text-liht flex w-full items-center justify-between bg-primary p-4 md:hidden'>
+				<span className=' h-12 w-12 cursor-pointer rounded-full bg-black'></span>
 				<Bars3Icon
 					onClick={() => setIsOpen(!isOpen)}
 					className='h-6 w-6 cursor-pointer text-light'
@@ -47,22 +46,18 @@ const Sidebar = (props: Props) => {
 						<EllipsisHorizontalIcon className='h-5 w-5 cursor-pointer text-light/40 duration-300 hover:scale-110 hover:text-light' />
 					</div>
 					<button className='flex w-full items-center justify-around gap-4 rounded-lg border border-secondary py-3 px-2 text-sm text-light duration-300 hover:bg-secondary'>
-						<ArrowLeftOnRectangleIcon className='h-6 w-6 text-light' />
+						<ArrowLeftOnRectangleIcon className='ml-2 h-6 w-6  text-light' />
 						Deconnexion
 					</button>
 				</div>
 				{/* menu */}
-				<div className='flex w-full flex-col gap-3'>
+				<div className='mb-4 flex w-full flex-col gap-3'>
 					<p className='text-secondary'>Menu</p>
-					<Link to='/'>
-						<Button title='Tableau de bord' />
-					</Link>
+					<Button title='Tableau de bord' />
 					<Button title='Demandes de service' span={4} />
 					<Button title='Clients' />
 					<Button title="Lieux d'interventions" />
-					<Link to='/partner'>
-						<Button title='Partenaires' />
-					</Link>
+					<Button title='Partenaires' />
 					<Button title='Beneficiers' />
 				</div>
 			</div>

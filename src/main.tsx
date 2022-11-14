@@ -4,9 +4,9 @@ import { Provider } from "react-redux"
 import { store } from "./app/store"
 import "./index.css"
 import App from "./App"
-import { BrowserRouter } from "react-router-dom"
 import { ApiProvider } from "@reduxjs/toolkit/query/react"
 import { apiSlice } from "./features/partners/partners-api-slice"
+import { BrowserRouter } from "react-router-dom"
 
 ReactDOM.render(
 	<React.StrictMode>

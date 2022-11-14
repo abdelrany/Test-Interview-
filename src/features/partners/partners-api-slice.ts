@@ -2,19 +2,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 const urlTomoes = "https://tomoes.com/"
 
-//the data we going to use
-// interface Partner {
-// 	id: string
-// 	name: string
-// 	avatar: string
-// 	email: string
-// 	telephone: string
-// 	disponible: string
-// 	lieux: {
-// 		zone: string
-// 		code: string
-// 	}
-// }
 export type Partner = {
 	data: PartnerData[]
 	lieux: PartnerLieux[]

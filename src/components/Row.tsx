@@ -1,29 +1,37 @@
 import { CalendarIcon } from "@heroicons/react/24/outline"
-import React from "react"
-import { useFetchPartnersQuery } from "../features/partners/partners-api-slice"
+import React, { FC } from "react"
 
-type Props = {}
+type Props = { partner: any }
 
-const Row = (props: Props) => {
+const Row: FC<Props> = ({ partner }) => {
 	return (
-		<div className='my-12 grid grid-cols-5 gap-2 rounded-lg border border-light p-2'>
-			<div className='flex items-center justify-center gap-2'>
-				<span className='h-8 w-8 rounded-full bg-secondary'></span>
-				<p className='text-dark underline '>Justin Hertwitz</p>
-			</div>
-			<p className=''>75008 76372 647483</p>
-			<p className=''>+33 45 86 45 06 </p>
-			<p className=''>justinHertwitz@outlook.com </p>
-			<div className='flex items-center justify-center gap-2'>
-				<p className=''>
-					<span className='h-4 w-4 rounded-full bg-green-600'></span>
-					Disponible
-				</p>
-				<div className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg bg-secondary'>
-					<CalendarIcon className='h-6 w-6 text-light' />
+		<tr className='rounded-lg border border-light  bg-background text-gray-900 duration-300 hover:bg-secondary hover:text-light'>
+			<td className='whitespace-nowrap  px-6 py-4 text-sm font-light'>
+				<img src={partner.avatar} className='h-8 w-8 rounded-full bg-black' />
+			</td>
+			<td className='whitespace-nowrap px-6 py-4 text-sm font-light underline'>
+				{partner.name}
+			</td>
+			<td className='whitespace-nowrap  px-6 py-4 text-sm font-light'>
+				{partner.lieux[0].code}
+			</td>
+			<td className='whitespace-nowrap  px-6 py-4 text-sm font-light'>
+				{partner.telephone}
+			</td>
+			<td className='whitespace-nowrap  px-6 py-4 text-sm font-light'>
+				{partner.email}
+			</td>
+			<td className='whitespace-nowrap  px-6 py-4 text-sm font-light'>
+				<div className='flex items-center justify-center gap-6'>
+					<span className='h-4 w-4 rounded-full  bg-danger'></span>
+					{partner.disponible}
+
+					<div className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg bg-secondary'>
+						<CalendarIcon className='h-6 w-6  text-light' />
+					</div>
 				</div>
-			</div>
-		</div>
+			</td>
+		</tr>
 	)
 }
 
